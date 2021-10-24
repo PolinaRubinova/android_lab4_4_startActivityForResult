@@ -17,7 +17,6 @@ class ThirdActivity : AppCompatActivity() {
             finish()
         }
         binding.toSecond.setOnClickListener {
-            setResult(2)
             finish()
         }
         binding.toAbout.setOnNavigationItemSelectedListener  { toAbout(it) }
