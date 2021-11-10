@@ -70,7 +70,6 @@ class NavigationTest {
 
     @Test
     fun testAbout() {
-        //launchActivity<MainActivity>()
         openAbout()
         Espresso.onView(ViewMatchers.withId(R.id.activity_about))
             .check(ViewAssertions.matches(ViewMatchers.isDisplayed()))
@@ -194,7 +193,6 @@ class NavigationTest {
         openAbout()
         aboutExist()
         onView(withContentDescription("Navigate up")).perform(click());
-        //onView(withContentDescription(R.string.abc_action_bar_up_description)).perform(click())
 
         onView(withId(R.id.bnToSecond)).perform(click())
         fr2exist()
