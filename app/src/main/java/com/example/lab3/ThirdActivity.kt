@@ -12,19 +12,18 @@ class ThirdActivity : AppCompatActivity() {
         val binding = ActivityThirdBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.toFirst.setOnClickListener {
+        binding.bnToFirst.setOnClickListener {
             setResult(1)
             finish()
         }
-        binding.toSecond.setOnClickListener {
-            finish()
-        }
-        binding.toAbout.setOnNavigationItemSelectedListener  { toAbout(it) }
+        binding.bnToSecond.setOnClickListener { finish() }
+        binding.navView.setOnItemSelectedListener { toAbout(it) }
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     private fun toAbout(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.about -> {
+            R.id.menu_about -> {
                 startActivity(Intent(this, AboutActivity::class.java))
             }
         }
